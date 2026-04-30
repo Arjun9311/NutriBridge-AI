@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "Case": {
+      "title": "Diagnosis Case",
+      "description": "A record of a crop disease diagnosis and recommendation",
+      "type": "object",
+      "properties": {
+        "imageUrl": { "type": "string", "description": "URL of the uploaded crop image" },
+        "cropType": { "type": "string" },
+        "soilType": { "type": "string" },
+        "disease": { "type": "string" },
+        "confidence": { "type": "number" },
+        "recommendation": {
+          "type": "object",
+          "properties": {
+            "action": { "type": "string" },
+            "time": { "type": "string" },
+            "reason": { "type": "string" },
+            "cost": { "type": "string" },
+            "explanation": { "type": "string" }
+          }
+        },
+        "weather": {
+          "type": "object",
+          "properties": {
+            "temp": { "type": "number" },
+            "condition": { "type": "string" },
+            "rainExpected": { "type": "boolean" }
+          }
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "lat": { "type": "number" },
+            "lng": { "type": "number" }
+          }
+        },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "userId": { "type": "string" }
+      },
+      "required": ["imageUrl", "cropType", "disease", "timestamp"]
+    }
+  },
+  "firestore": {
+    "cases": {
+      "schema": "Case",
+      "description": "Collection of all diagnosed cases"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "NutriBridge AI",
+  "description": "Nutrition & Health Decision System using AI to detect diseases and provide weather-aware recommendations for farmers.",
+  "requestFramePermissions": ["geolocation", "microphone"],
+  "majorCapabilities": []
+}
